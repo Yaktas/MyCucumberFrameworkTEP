@@ -2,6 +2,9 @@ package stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 import java.util.concurrent.TimeUnit;
@@ -13,8 +16,8 @@ public class Hooks {
     //This will run before every scenario
     @Before(order = 1)
     public void setUp(){
-        System.out.println("This is SetUp Method in the Hooks");
-        Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+
     }
 
     //Tagged Hooks Annotation
@@ -22,14 +25,21 @@ public class Hooks {
     @Before(value = "@iphone",order = 2)
     public void searchIphone(){
         System.out.println("This is IPHONE SETUP Method in the Hooks");
-        Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-
 
     //This will run After each Scenario
     @After
-    public void tearDown(){
-        System.out.println("This is TearDown Method in the Hooks");
+    public void tearDown(Scenario scenario){
+
+        //Taking the screenshot
+        final byte[] screenshot=((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        //We are embedding the screenshot as an image in our framework
+        //We SHOULD get screenshot after every FAILING Scenario
+        //Attaching the image if scenario fails
+        if (scenario.isFailed()) {
+            scenario.embed(screenshot, "image/png");
+        }
+            Driver.closeDriver();
     }
 
 }

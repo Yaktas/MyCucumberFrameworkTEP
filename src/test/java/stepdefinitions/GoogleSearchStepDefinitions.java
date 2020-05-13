@@ -44,6 +44,7 @@ GooglePage googlePage=new GooglePage();
     }
     @Then("verify the result has tea pot")
     public void verify_the_result_has_tea_pot() {
+        Assert.fail();
         Assert.assertTrue(Driver.getDriver().getTitle().toLowerCase().contains("tea pot"));
     }
 
