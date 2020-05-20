@@ -1,4 +1,4 @@
-@datatable
+@datatable @smoketest
 Feature: Single data table
   Scenario Outline: TC01_google seach test
     Given user is on the google page

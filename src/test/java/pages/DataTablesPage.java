@@ -42,5 +42,7 @@ public class DataTablesPage {
 
     @FindBy(xpath = "//td[@class='sorting_1']")
     public WebElement nameField;
+    @FindBy(xpath = "//button[@data-day='10']")
+    public WebElement day;
 
 }

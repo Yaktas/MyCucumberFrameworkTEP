@@ -97,7 +97,9 @@ dtPage.extension.sendKeys(extension);
     }
     @Given("user enters startdate {string}")
     public void user_enters_startdate(String startdate) {
-dtPage.startDate.sendKeys(startdate);
+        dtPage.startDate.click();
+        dtPage.day.click();
+        //dtPage.startDate.sendKeys(startdate);
     }
     @Given("user enters salary {string}")
     public void user_enters_salary(String salary) {

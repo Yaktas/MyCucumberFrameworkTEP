@@ -1,4 +1,4 @@
-@googlesearch
+@googlesearch @first
 Feature:Google search
 
   Background: user is on the google page

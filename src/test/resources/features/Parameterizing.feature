@@ -1,4 +1,4 @@
-@FHCloginParameters
+@FHCloginParameters @second
 Feature: login feature with parameters
 
   Scenario: TC01_user should login with manager credentials

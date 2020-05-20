@@ -7,8 +7,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import java.util.concurrent.TimeUnit;
-
 public class Hooks {
     //@Before is similar to @BeforeMethod in TestNG
     //In our case, @Before will run before each Scenario:

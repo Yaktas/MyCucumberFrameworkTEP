@@ -1,4 +1,4 @@
-@FHClogin
+@FHClogin @smoketest
 Feature: login feature
 
   Scenario: TC01_user should login with manager credentials

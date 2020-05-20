@@ -1,4 +1,4 @@
-@datatable4
+@datatable4 @third
 Feature: scenario outline example
   Scenario: testing the data tables web page
     Given user is on the datatables
